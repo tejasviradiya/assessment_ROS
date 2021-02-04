@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="t_robot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0032126 0.039362 3.1215E-10"
+        rpy="0 0 0" />
+      <mass
+        value="8" />
+      <inertia
+        ixx="0.33295"
+        ixy="-0.033567"
+        ixz="1.4807E-09"
+        iyy="0.77867"
+        iyz="-1.1059E-09"
+        izz="0.50589" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://t_robot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://t_robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="R_Link">
+    <inertial>
+      <origin
+        xyz="0.024841 -2.5496E-10 2.4664E-10"
+        rpy="0 0 0" />
+      <mass
+        value="1.0395" />
+      <inertia
+        ixx="0.010857"
+        ixy="-5.4037E-11"
+        ixz="5.2271E-11"
+        iyy="0.0055922"
+        iyz="-4.5579E-19"
+        izz="0.0055922" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://t_robot/meshes/R_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://t_robot/meshes/R_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_Joint"
+    type="continuous">
+    <origin
+      xyz="0.1 0.235 0.04"
+      rpy="0.73198 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Link" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="L_Link">
+    <inertial>
+      <origin
+        xyz="0.024841 3.3307E-15 1.7271E-14"
+        rpy="0 0 0" />
+      <mass
+        value="1.0395" />
+      <inertia
+        ixx="0.010857"
+        ixy="-5.4352E-19"
+        ixz="-1.9914E-18"
+        iyy="0.0055922"
+        iyz="2.1684E-19"
+        izz="0.0055922" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://t_robot/meshes/L_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://t_robot/meshes/L_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_Joint"
+    type="continuous">
+    <origin
+      xyz="0.1 -0.235 0.04"
+      rpy="-3.0125 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Gripper_Link">
+    <inertial>
+      <origin
+        xyz="0.46048 -0.014857 1.8794E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.100" />
+      <inertia
+        ixx="0.03609"
+        ixy="0.01982"
+        ixz="5.644E-17"
+        iyy="0.11229"
+        iyz="3.0979E-17"
+        izz="0.10981" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://t_robot/meshes/Gripper_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://t_robot/meshes/Gripper_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Gripper_Joint"
+    type="revolute">
+    <origin
+      xyz="0.1 0 0.12"
+      rpy="1.5708 0.046241 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="Gripper_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0.6"
+      upper="-0.01"
+      effort="100"
+      velocity="0.5" />
+  </joint>
+  <link name="camera_link">
+   <inertial>
+      <mass value="0.5"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.00270833333333" ixy="0" ixz="0" iyy="0.00104166666667" iyz="0" izz="0.00208333333333"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <box size="0.05 0.05 0.2"/>
+      </geometry>
+    </collision>
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.2"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="joint_sensor_camera" type="fixed">
+    <origin xyz="-0.15 0 0.25" rpy="0 0 3.1428"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <gazebo>
+    <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>20</updateRate>
+      <leftJoint>L_Joint</leftJoint>
+      <rightJoint>R_Joint</rightJoint>
+      <wheelSeparation>0.470</wheelSeparation>
+      <wheelDiameter>0.25</wheelDiameter>
+      <torque>0.01</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo>
+  <gazebo reference="camera_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>t_robot/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+</robot>
